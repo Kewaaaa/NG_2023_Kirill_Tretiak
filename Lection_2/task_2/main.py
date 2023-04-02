@@ -1,3 +1,3 @@
 # This program finds uniq elements
-getUsersInfo = set(input("Enter some info: ").split(", "))
-print(getUsersInfo)
+getUsersInf = set(input("Enter some info: ").split(", "))
+print(getUsersInf)

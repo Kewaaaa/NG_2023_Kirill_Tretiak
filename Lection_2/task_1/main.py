@@ -9,11 +9,11 @@ def main():
     bufferList = []
     num = 1
     while True:
-        askElem = input(
+        askElement = input(
             "Enter some info, or type 'end' to end the program: ")
-        if askElem == "end":
+        if askElement == "end":
             break
-        bufferList.append(askElem)
+        bufferList.append(askElement)
     num += 1
     print("Your list - ", bufferList)
     print("Elements: ", countElem(bufferList))
