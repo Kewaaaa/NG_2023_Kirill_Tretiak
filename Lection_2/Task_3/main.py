@@ -8,10 +8,3 @@ for i in range(0, 3):
             notUniq.append(items)
 print(buffer)
 print(notUniq)
-
-# a = input("Enter: ").split(", ")
-# buffer = []
-# for x in a:
-#     if a.count(x) > 1:
-#         buffer.append(x)
-# print(buffer)
