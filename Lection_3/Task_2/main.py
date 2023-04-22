@@ -1,8 +1,8 @@
-def romb(n, empty=5):
-    print(" " * empty, "*" * n)
-    if n < 10:
-        romb(n + 2, empty - 1)
-    print(" " * empty, "*" * n)
+def romb(star, empty=5):
+    print(" " * empty, "*" * star)
+    if star < 10:
+        romb(star + 2, empty - 1)
+    print(" " * empty, "*" * star)
 
 
 romb(1)
