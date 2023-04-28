@@ -1,6 +1,13 @@
 import argparse
 import os
 
+def showFiles(path, empty=0):
+    lst = path.split("/")
+    for values in lst:
+        print(' '*empty ,values+'/')
+        empty += 1
+
+
 def findFiles(folder, file_title):
     home_dir = os.path.expanduser("~")
     for root, dirs, files in os.walk(home_dir):
@@ -13,7 +20,9 @@ def findFiles(folder, file_title):
             name, ext = os.path.splitext(file)
             if file_title in file:
                 path_file = os.sep.join([root, name + ext])
-                print("Full path:", path_file)
+                showFiles(path_file)
+                
+                
         
 def main():
     parser = argparse.ArgumentParser()
