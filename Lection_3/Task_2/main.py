@@ -1,8 +1,9 @@
-def romb(star, empty=5):
-    print(" " * empty, "*" * star)
-    if star < 10:
-        romb(star + 2, empty - 1)
-    print(" " * empty, "*" * star)
+def romb(space, stars = 1):
+    print(" " * space, "*" * stars)
+    if stars <= space:
+        romb(space-1, stars + 2)
+    print(" " * space, "*" * stars)
 
 
-romb(1)
+size = int(input("Size: "))
+romb(size)
