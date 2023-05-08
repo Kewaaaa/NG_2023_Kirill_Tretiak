@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banter</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: inline;
+            font-size: 50px;
+            color: rgb(156, 59, 59);
+        }
+        .main-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 90vh;
+            background-color: rgb(49, 49, 49);
+            margin-left: 25vw;
+            margin-right: 25vw;
+            border-radius: 20px;
+        }
+        .messages-container{
+            padding: 5px;
+            width: 450px;
+               
+        }
+        .user-container{
+            margin-bottom: 20px;
+        }
+        .input{
+            font-size: 20px;
+            border-radius: 10px;
+            outline: none;
+            
+        }
+        .btn{
+            background-color: rgb(123, 123, 0);
+            border: none;
+            padding: 7px 13px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background-color: rgb(109, 109, 1);
+            transition:background-color 0.15s ;
+        }
+        .btn:active{
+            opacity: 0.8;
+            transition: opacity 0.15s;
+        }
+        .msg{
+            font-size: 18px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Banter</h1>
+    <div class="main-container">
+        
+        <div class="messages-container">
+            {% for m in message %}
+            <p class="msg">{{ m }}</p>
+            {% endfor %}
+        </div>
+        
+        <div class="user-container">
+                <form action=" {{ url_for('chat', username=username) }}" , method="post">
+                <input type="text" name="msg" class="input" placeholder="Enter text">
+                <input type="submit" value="Send" class="btn">
+                 </form>
+        </div>
+       
+    </div>
+</body>
+</html>
