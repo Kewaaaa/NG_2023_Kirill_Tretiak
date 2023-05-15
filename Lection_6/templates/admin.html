@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block form %}
+<form action="{{ url_for('admin', username = username) }}" method="post">
+Title <br>
+<input type="text" name="title"> <br>
+Content <br>
+<input type="text" name="content"> <br>
+Date {{ time }}
+<input type="submit" value="Send">
+</form>
+{% endblock form %}
+{% block content %}
+{% for row in result %}
+    <div>
+        <h1> {{ row[1] }}</h1>
+        <p>{{ row[0] }}</p>
+        <p>{{ row[2] }} </p>
+        <p> {{ row[3] }} </p>
+    </div>
+    {% endfor %}
+{% endblock content %}
